@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <section id="section">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam doloribus incidunt consequuntur fuga atque illum cumque ex? Dicta at itaque, dolor veritatis deserunt dolore dolorem consequatur quibusdam, quod deleniti assumenda.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi vel iste adipisci similique laudantium asperiores maxime! Explicabo, ex neque.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, molestiae?</p>
+    </section>
+    <section id="commentSection">
+        <textarea name="comment" id="commentArea" cols="30" rows="10"></textarea><br/>
+        <button id="postBtn">Post</button>
+    </section>
+    <script>
+        const section = document.getElementById('section');
+        const p = document.createElement('p');
+        p.innerText='i can do every thing!';
+        section.appendChild(p);
+
+document.getElementById('postBtn').addEventListener('click', function(){
+    const comment = document.getElementById('commentArea');
+    const commentValue = comment.value;
+    const commentSecton = document.getElementById('commentSection');
+    const p = document.createElement('p');
+    p.style.backgroundColor='blue';
+    p.style.border='2px solid';
+    p.style.color='white';
+    p.style.padding = '10px';
+    p.innerText = commentValue;
+    commentSecton.appendChild(p);
+})
+    </script>
+</body>
+</html>

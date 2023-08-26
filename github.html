@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github type delete</title>
+</head>
+<body>
+    <p id="secrate">infomation</p>
+    <input type="text" id="delete-conform" placeholder="Please type delete">
+    <button id="btn-delete" disabled>delete</button>
+
+    <script>
+        document.getElementById('delete-conform').addEventListener('keyup', function(event){
+           
+            const value = event.target.value;
+            console.log(value);
+            const btn = document.getElementById('btn-delete');
+           
+            if(value === 'delete'){
+                btn.removeAttribute('disabled');
+            }else{
+                btn.setAttribute('disabled', true);
+               
+            }
+        });
+        document.getElementById('btn-delete').addEventListener('click', function(){
+            const secrateText = document.getElementById('secrate');
+            secrateText.style.display='none';
+        })
+    </script>
+</body>
+</html>

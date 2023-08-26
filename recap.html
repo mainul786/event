@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recap event Listener</title>
+</head>
+<body>
+
+<p id="someChange"> When i clicked make change button </p>
+<button onclick="makeChange()">Make change</button>
+
+<p id="change">doing update</p>
+<input type="text" id="inputField">
+<button id="update">update</button>
+    <script>
+        function makeChange(){
+            document.body.style.backgroundColor='tomato';
+            const p = document.getElementById('someChange');
+            p.innerText='wow i can do it!';
+        }
+
+        document.getElementById('update').addEventListener('click', function(){
+            const inputField = document.getElementById('inputField');
+            const inputValue = inputField.value;
+            const p = document.getElementById('change');
+            p.innerText=inputValue;
+            inputField.value = '';
+        })
+    </script>
+</body>
+</html>

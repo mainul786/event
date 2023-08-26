@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript Event explain</title>
+</head>
+<body>
+    <button onclick="document.body.style.backgroundColor='yellow'">Click me</button>
+    <button id="make-purple">Make purple</button>
+
+    <!-- we can use bellow this type -->
+    <button onclick="makeBlue()">make Blue</button>
+
+    <!-- not  -->
+    <button id="make-pink">make pink</button>
+    <button id="make-green">make green</button>
+
+    <!-- important must use bellow this process -->
+    <button id="make-goldenrod">make goldenRod</button>
+
+    <script>
+        const event = document.getElementById('make-purple');
+        event.onclick = function makePurple(){
+            document.body.style.backgroundColor= 'purple';
+        };
+
+        function makeBlue(){
+            document.body.style.backgroundColor='blue';
+        }
+
+
+const makePink = document.getElementById('make-pink');
+makePink.addEventListener('click', makePinkBody)
+function makePinkBody(){
+    document.body.style.backgroundColor='pink';
+};
+
+
+const makegreenButton = document.getElementById('make-green')
+makegreenButton.addEventListener('click', function makeGreen(){
+    document.body.style.backgroundColor='green';
+})
+
+// muat use bellow this process important
+document.getElementById('make-goldenrod').addEventListener('click', function(){
+    document.body.style.backgroundColor='goldenrod';
+});
+
+    </script>
+</body>
+</html>
